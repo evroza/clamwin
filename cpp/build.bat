@@ -1,4 +1,11 @@
 @echo off
+setlocal 
+
+set VCINSTALLDIR=E:\ProgramFilesMpya\Microsoft Visual Studio 12.0\VC
+
+Set PATH=C:\Program Files\Microsoft Visual C++ Toolkit 2003\bin;c:\program files\microsoft platform sdk\bin\win64;%PATH%;
+Set INCLUDE=C:\Program Files\Microsoft Visual C++ Toolkit 2003\include;c:\Program Files\Microsoft Platform SDK\Include;%INCLUDE%
+Set LIB=C:\Program Files\Microsoft Visual C++ Toolkit 2003\lib;c:\Program Files\Microsoft Platform SDK\Lib;%LIB%
 
 set LIBS=kernel32.lib user32.lib advapi32.lib shell32.lib ole32.lib
 set DEFINES=/D "WIN32" /D "_CRT_SECURE_NO_DEPRECATE" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "EXPLORERSHELL_EXPORTS"
@@ -38,4 +45,6 @@ if not "%ERRORLEVEL%"=="0" goto END
 link.exe /OUT:".\Release_x64/ExpShell64.dll" /INCREMENTAL:NO /NOLOGO /DLL /DEF:".\ExplorerShell.def" /PDB:".\Release_x64/ExplorerShell.pdb" /IMPLIB:".\Release_x64/ExplorerShell.lib" /MACHINE:X64 .\Release_x64\ExplorerShell.res .\Release_x64\ShellExt.obj .\Release_x64\ShellExtImpl.obj %LIBS%
 if not "%ERRORLEVEL%"=="0" goto END
 
+echo "mziito"
 :END
+endlocal
