@@ -33,6 +33,7 @@ sys.path.append(os.path.join(sb_top_dir,"../addons/pyc/build/lib.win32-2.3"))
 sys.path.append(os.path.join(sb_top_dir,"../clamav-release/contrib/msvc/Release/Win32"))
 #sys.path.append(os.path.join(sb_top_dir,"Setup/Dependencies/pthread"))
 
+
 import version
 
 
@@ -89,7 +90,7 @@ py2exe_options = dict(
     packages = "encodings",
     excludes = "win32ui,pywin,pywin.debugger", # pywin is a package, and still seems to be included.
     includes = "throb,dbhash", # AVI throb images
-    dll_excludes = "dapi.dll,mapi32.dll",
+    dll_excludes = "dapi.dll,mapi32.dll, msvcr80.dll",
     optimize = '02',
     typelibs = [
         ('{00062FFF-0000-0000-C000-000000000046}', 0, 9, 0),
