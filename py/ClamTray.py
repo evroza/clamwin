@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        Tray.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -121,7 +121,7 @@ class MainWindow:
                 #wait to finish
                 if self._IsProcessRunning(proc, True):
                     #still running - complain and terminate
-                    win32gui.MessageBox(self.hwnd, 'Unable to stop scheduled process, terminating', 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONSTOP)
+                    win32gui.MessageBox(self.hwnd, 'Unable to stop scheduled process, terminating', 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONSTOP)
                     os._exit(0)
                 proc.close()
 
@@ -257,7 +257,7 @@ class MainWindow:
             hicon = win32gui.LoadIcon(0, win32con.IDI_APPLICATION)
 
         flags = win32gui.NIF_ICON | win32gui.NIF_MESSAGE | win32gui.NIF_TIP
-        nid = (self.hwnd, 0, flags, MainWindow.WM_TASKBAR_NOTIFY, hicon, "ClamWin Free Antivirus")
+        nid = (self.hwnd, 0, flags, MainWindow.WM_TASKBAR_NOTIFY, hicon, "Blindata Antivirus")
         win32gui.Shell_NotifyIcon(win32gui.NIM_ADD, nid)
 
     def OnRestart(self, hwnd, msg, wparam, lparam):
@@ -279,7 +279,7 @@ class MainWindow:
             self.OnCommand(hwnd, win32con.WM_COMMAND, self.MENU_OPEN_CLAM, 0)
         elif lparam==win32con.WM_RBUTTONUP:
             if self._nomenu:
-                hwnd = win32gui.FindWindow('#32770', 'ClamWin Update')
+                hwnd = win32gui.FindWindow('#32770', 'Blindata Update')
                 if hwnd:
                     try:
                         win32gui.ShowWindow(hwnd, win32con.SW_SHOW)
@@ -337,14 +337,14 @@ class MainWindow:
 
             # create main menu
             menu = win32gui.CreatePopupMenu()
-            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_OPEN_CLAM, "&Open ClamWin")
+            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_OPEN_CLAM, "&Open Blindata")
             win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_UPDATE_DB, "&Download Virus Database Update")
-            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_CONFIGURE, "&Configure ClamWin")
+            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_CONFIGURE, "&Configure Blindata")
             win32gui.AppendMenu( menu, win32con.MF_POPUP, scheduler_popup, "&Scheduler")
             win32gui.AppendMenu( menu, win32con.MF_POPUP, reports_popup, "Display &Reports")
             win32gui.AppendMenu( menu, win32con.MF_SEPARATOR, 0, "" )
             win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_CHECK_UPDATE, "Check &Latest Version")
-            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_CLAMWIN_WEB, "&Visit ClamWin Website")
+            win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_CLAMWIN_WEB, "&Visit Blindata Website")
             win32gui.AppendMenu( menu, win32con.MF_SEPARATOR, 0, "" )
             win32gui.AppendMenu( menu, win32con.MF_STRING, self.MENU_EXIT, "&Exit" )
 
@@ -373,9 +373,9 @@ class MainWindow:
         elif id == self.MENU_UPDATE_DB:
             self._UpdateDB(lparam)
         elif id == self.MENU_CHECK_UPDATE:
-            self._OpenWebPage('http://www.clamwin.com/index.php?option=content&task=view&id=40&Itemid=60&version='+version.clamwin_version)
+            self._OpenWebPage('http://www.blindata.com/index.php?option=content&task=view&id=40&Itemid=60&version='+version.clamwin_version)
         elif id == self.MENU_CLAMWIN_WEB:
-            self._OpenWebPage('http://www.clamwin.com')
+            self._OpenWebPage('http://www.blindata.com')
         elif id == self.MENU_CONFIGURE:
             self._ShowConfigure()
         elif id == self.MENU_SHOWSCANLOG:
@@ -398,8 +398,8 @@ class MainWindow:
                     self._ShowClamWin(path)
                 except Exception, e:
                     win32gui.MessageBox(self.hwnd,
-                            'Could not launch ClamWin Scanner. Error: %s' % str(e),
-                            'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+                            'Could not launch Blindata Scanner. Error: %s' % str(e),
+                            'Blindata Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
 
     def OnConfigUpdated(self, hwnd, msg, wparam, lparam):
@@ -453,7 +453,7 @@ class MainWindow:
             else:
                 # show balloon
                 if self._config.Get('UI', 'TrayNotify') == '1':
-                    tray_notify_params = (('Unable to get online version. Most likely it\'s a temporary connectivity error and you don\'t have to do anything.\nIf you see this error often then allow clamwin.exe in your firewall and check proxy settings.\n', 0,
+                    tray_notify_params = (('Unable to get online version. Most likely it\'s a temporary connectivity error and you don\'t have to do anything.\nIf you see this error often then allow blindata.exe in your firewall and check proxy settings.\n', 0,
                                 win32gui.NIIF_WARNING, 30000), None)
                     Utils.ShowBalloon(0, tray_notify_params, None, True)
                     self._checkversionattempts = 0
@@ -474,7 +474,7 @@ class MainWindow:
             Utils.SpawnPyOrExe(False, os.path.join(curDir, 'ClamWin'), *params)
         except Exception, e:
             win32gui.MessageBox(self.hwnd, 'An error occured while displaying log file %s.\nError: %s' % (logfile, str(e)),
-                                 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+                                 'Blindata Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
     def _ShowClamWin(self, path=''):
         try:
@@ -484,7 +484,7 @@ class MainWindow:
                 params = (' --mode=main',)
             Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'ClamWin'), *params)
         except Exception, e:
-            win32gui.MessageBox(self.hwnd, 'An error occured while starting ClamWin Free Antivirus scanner.\n' + str(e), 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+            win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus scanner.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
     def _UpdateDB(self, schedule_label):
         if not schedule_label:
@@ -492,7 +492,7 @@ class MainWindow:
                 params = (' --mode=update', ' --config_file="%s"' % self._config.GetFilename(),)
                 Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'ClamWin'), *params)
             except Exception, e:
-                win32gui.MessageBox(self.hwnd, 'An error occured while starting ClamWin Free Antivirus Update.\n' + str(e), 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+                win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus Update.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
         else: # update virus db silently
             if Utils.IsOnline():
                 freshclam_conf = Utils.SaveFreshClamConf(self._config)
@@ -556,7 +556,7 @@ class MainWindow:
             import webbrowser
             webbrowser.open(url)
         except ImportError:
-            win32gui.MessageBox(self.hwnd, 'Please point your browser at: %s' % url, 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONINFORMATION)
+            win32gui.MessageBox(self.hwnd, 'Please point your browser at: %s' % url, 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONINFORMATION)
 
 
     def _ShowConfigure(self, switchToSchedule = False):
@@ -570,7 +570,7 @@ class MainWindow:
                         ' --config_file="%s"' % self._config.GetFilename(),)
             Utils.SpawnPyOrExe(False, os.path.join(curDir, 'ClamWin'), *params)
         except Exception, e:
-            win32gui.MessageBox(self.hwnd, 'An error occured while starting ClamWin Free Antivirus Preferences.\n' + str(e), 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+            win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus Preferences.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
     # returns process and stdout buffer
     def _SpawnProcess(self, cmd, proc_priority, finished_func, finished_params):

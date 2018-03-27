@@ -51,7 +51,7 @@ class wxDialogUpdateChecker(wxDialog):
               name='wxDialogUpdateChecker', parent=prnt, pos=wxPoint(229, 314),
               size=wxSize(324, 272),
               style=wxDEFAULT_DIALOG_STYLE|wxSTAY_ON_TOP|wxMINIMIZE_BOX,
-              title='ClamWin Update')
+              title='Blindata Update')
         self.SetClientSize(wxSize(316, 245))
         EVT_CHAR_HOOK(self, self.OnCharHook)
         EVT_INIT_DIALOG(self, self.OnInitDialog)

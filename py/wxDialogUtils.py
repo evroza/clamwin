@@ -230,7 +230,7 @@ def wxCheckUpdate(parent, config):
     # if we have a window with such name don't show a second one
     try:
         import win32gui
-        hwnd = win32gui.FindWindow('#32770', 'ClamWin Update')
+        hwnd = win32gui.FindWindow('#32770', 'Blindata Update')
         if hwnd:
             return True
     except:
