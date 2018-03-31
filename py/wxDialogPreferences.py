@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxDialogPreferences.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -190,7 +190,7 @@ class wxPreferencesDlg(wxDialog):
         # generated method, don't edit
         wxDialog.__init__(self, id=wxID_WXPREFERENCESDLG, name='', parent=prnt,
               pos=wxPoint(896, 398), size=wxSize(419, 395),
-              style=wxDEFAULT_DIALOG_STYLE, title='ClamWin Preferences')
+              style=wxDEFAULT_DIALOG_STYLE, title='Blindata Preferences')
         self._init_utils()
         self.SetClientSize(wxSize(411, 368))
         self.SetAutoLayout(False)
@@ -679,7 +679,7 @@ class wxPreferencesDlg(wxDialog):
               name='checkBoxSMTPEnable', parent=self._panelEmailAlerts,
               pos=wxPoint(6, 11), size=wxSize(362, 15), style=0)
         self.checkBoxSMTPEnable.SetValue(False)
-        self.checkBoxSMTPEnable.SetToolTipString('Select if you wish to receive email alerts when ClamWin detects a virus')
+        self.checkBoxSMTPEnable.SetToolTipString('Select if you wish to receive email alerts when Blindata detects a virus')
         EVT_CHECKBOX(self.checkBoxSMTPEnable,
               wxID_WXPREFERENCESDLGCHECKBOXSMTPENABLE,
               self.OnCheckBoxSMTPEnable)
@@ -853,10 +853,10 @@ class wxPreferencesDlg(wxDialog):
               self.OnCheckBoxEnableAutoUpdate)
 
         self.checkBoxCheckVersion = wxCheckBox(id=wxID_WXPREFERENCESDLGCHECKBOXCHECKVERSION,
-              label='&Notify About New ClamWin Releases',
+              label='&Notify About New Blindata Releases',
               name='checkBoxCheckVersion', parent=self._panelInternetUpdate,
               pos=wxPoint(6, 198), size=wxSize(322, 20), style=0)
-        self.checkBoxCheckVersion.SetToolTipString('Select if you wish to get a notification message when ClamWin Free Antivirus program has been updated')
+        self.checkBoxCheckVersion.SetToolTipString('Select if you wish to get a notification message when Blindata Antivirus program has been updated')
         self.checkBoxCheckVersion.SetValue(False)
         EVT_CHECKBOX(self.checkBoxCheckVersion,
               wxID_WXPREFERENCESDLGCHECKBOXCHECKVERSION,
@@ -962,7 +962,7 @@ class wxPreferencesDlg(wxDialog):
               name='checkBoxOutlookShowSplash', parent=self._panelEmailScanning,
               pos=wxPoint(15, 83), size=wxSize(354, 18), style=0)
         self.checkBoxOutlookShowSplash.SetValue(False)
-        self.checkBoxOutlookShowSplash.SetToolTipString('Select if you wish to display ClamWin Splash Screen when MS Outlook starts up')
+        self.checkBoxOutlookShowSplash.SetToolTipString('Select if you wish to display Blindata Splash Screen when MS Outlook starts up')
         EVT_CHECKBOX(self.checkBoxOutlookShowSplash,
               wxID_WXPREFERENCESDLGCHECKBOXOUTLOOKSHOWSPLASH,
               self.OnCheckBoxOutlookScanOutgoingCheckbox)
@@ -1430,7 +1430,7 @@ class wxPreferencesDlg(wxDialog):
                             self.intCtrlSMTPPort.GetValue(),
                             self.textCtrlSMTPUser.GetValue(),
                             self.textCtrlSMTPPassword.GetValue(),
-                            Body='This is a test message sent during configuration of ClamWin Free Antivirus on the following computer: %s.\n'\
+                            Body='This is a test message sent during configuration of Blindata Antivirus on the following computer: %s.\n'\
                                 'Please do not be alarmed.\n' % Utils.GetHostName())
             status, msg = msg.Send(True)
             if not status:
@@ -1523,7 +1523,7 @@ class MyValidator(MyBaseValidator):
             text = ctrl.GetValue()
         if len(text) == 0:
             page = self.GetWindow().GetParent()
-            wxMessageBox("Value cannot be empty", "ClamWin Free Antivirus", style=wxICON_EXCLAMATION|wxOK)
+            wxMessageBox("Value cannot be empty", "Blindata Antivirus", style=wxICON_EXCLAMATION|wxOK)
             ctrl.SetBackgroundColour("yellow")
             ctrl.SetFocus()
             ctrl.Refresh()
@@ -1576,7 +1576,7 @@ class MyFolderPromptCreateValidator(MyValidator):
         # offer to create a folder if it doesn't exist
         if not os.path.isdir(path):
             main_win = win.GetParent()
-            choice = MsgBox.MessageBox(main_win, 'ClamWin Free Antivirus',
+            choice = MsgBox.MessageBox(main_win, 'Blindata Antivirus',
                         'The folder you selected does not exist. Would you like to create %s now?' % path,
                         wxYES_NO  | wxICON_QUESTION)
             if choice == wxID_YES:
@@ -1594,7 +1594,7 @@ class MyPatternValidator(MyBaseValidator):
         strings = ctrl.GetStrings()
         if len(strings) == 0:
             page = self.GetWindow().GetParent()
-            wxMessageBox("Value cannot be empty", "ClamWin Free Antivirus", style=wxICON_EXCLAMATION|wxOK)
+            wxMessageBox("Value cannot be empty", "Blindata Antivirus", style=wxICON_EXCLAMATION|wxOK)
             ctrl.GetListCtrl().SetBackgroundColour("yellow")
             ctrl.SetFocus()
             ctrl.Refresh()

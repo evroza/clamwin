@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxDialogAbout.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -55,11 +55,11 @@ class wxAboutDlg(wxDialog):
         wxDialog.__init__(self, id=wxID_WXABOUTDLG, name='wxAboutDlg',
               parent=prnt, pos=wxPoint(1012, 480), size=wxSize(428, 344),
               style=wxDEFAULT_DIALOG_STYLE,
-              title='About ClamWin Free Antivirus')
+              title='About Blindata Antivirus')
         self.SetClientSize(wxSize(420, 317))
         self.SetBackgroundColour(wxColour(255, 255, 255))
         self.SetAutoLayout(false)
-        self.SetToolTipString('About ClamWin Free Antivirus')
+        self.SetToolTipString('About Blindata Antivirus')
         self.Center(wxBOTH)
         EVT_CHAR_HOOK(self, self.OnCharHook)
 
@@ -91,7 +91,7 @@ class wxAboutDlg(wxDialog):
               name='staticBitmapClam', parent=self, pos=wxPoint(249, 10),
               size=wxSize(134, 122), style=0)
         self.staticBitmapClam.SetCursor(wxStockCursor(wxCURSOR_HAND))
-        self.staticBitmapClam.SetToolTipString('ClamWin Free Antivirus Homepage')
+        self.staticBitmapClam.SetToolTipString('Blindata Antivirus Homepage')
         EVT_LEFT_DOWN(self.staticBitmapClam, self.OnClamWinHomePage)
 
         self.staticTextClamWinHome = wxStaticText(id=wxID_WXABOUTDLGSTATICTEXTCLAMWINHOME,
@@ -100,12 +100,12 @@ class wxAboutDlg(wxDialog):
         self.staticTextClamWinHome.SetToolTipString('')
 
         self.genStaticTextClamWinHome2 = wxGenStaticText(ID=wxID_WXABOUTDLGGENSTATICTEXTCLAMWINHOME2,
-              label='http://www.clamwin.com', name='genStaticTextClamWinHome2',
+              label='http://www.blindata.com', name='genStaticTextClamWinHome2',
               parent=self, pos=wxPoint(69, 68), size=wxSize(131, 20),
               style=wxTRANSPARENT_WINDOW)
         self.genStaticTextClamWinHome2.SetForegroundColour(wxColour(0, 0, 255))
         self.genStaticTextClamWinHome2.SetCursor(wxStockCursor(wxCURSOR_HAND))
-        self.genStaticTextClamWinHome2.SetToolTipString('ClamWin Free Antivirus Homepage')
+        self.genStaticTextClamWinHome2.SetToolTipString('Blindata Antivirus Homepage')
         EVT_LEFT_DOWN(self.genStaticTextClamWinHome2, self.OnClamWinHomePage)
 
         self.staticTextAuthor1 = wxStaticText(id=wxID_WXABOUTDLGSTATICTEXTAUTHOR1,
@@ -115,7 +115,7 @@ class wxAboutDlg(wxDialog):
         self.staticTextAuthor1.SetToolTipString('')
 
         self.staticTextCopyright = wxStaticText(id=wxID_WXABOUTDLGSTATICTEXTCOPYRIGHT,
-              label='Copyright ClamWin Pty Ltd (c) 2004 - 2008',
+              label='Copyright Blindata Pty Ltd (c) 2014 - 2018',
               name='staticTextCopyright', parent=self, pos=wxPoint(16, 207),
               size=wxSize(200, 13), style=0)
         self.staticTextCopyright.SetToolTipString('')
@@ -179,7 +179,7 @@ class wxAboutDlg(wxDialog):
         self.staticText2.SetToolTipString('')
 
         self.staticText3 = wxStaticText(id=wxID_WXABOUTDLGSTATICTEXT3,
-              label='ClamWin  is not affiliated with ClamAV or SourceFire Inc.',
+              label='Blindata  is not affiliated with ClamAV or SourceFire Inc.',
               name='staticText3', parent=self, pos=wxPoint(16, 243),
               size=wxSize(190, 30), style=0)
 
@@ -201,20 +201,20 @@ class wxAboutDlg(wxDialog):
         event.Skip()
 
     def OnClamAVHomePage(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://www.clamav.net')
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.net')
 
     def OnClamWinHomePage(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://www.clamwin.com')
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.com')
 
     def OnNetfarmHomepage(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://oss.netfarm.it/clamav/')
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.com/blinscan/')
 
 
     def _SetClamVersion(self):
         if self.config is None:
             return
         if not os.path.exists(self.config.Get('ClamAV', 'ClamScan')):
-            ver  = 'Could not locate ClamScan executable'
+            ver  = 'Could not locate BlinScan executable'
         else:
             cmd = '"' + self.config.Get('ClamAV', 'ClamScan')  + '" --stdout --version'
             proc = None

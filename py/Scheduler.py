@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        Scheduler.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -157,7 +157,7 @@ class Scheduler(threading.Thread):
             try:
                 lt = time.localtime(t)
                 # Y2009 and Y2010 fix (dtimestamp was wron so the binary did not update until 2011, doh)
-                # http://forums.clamwin.com/viewtopic.php?t=1988&postdays=0&postorder=asc&start=60
+                # http://forums.blindata.com/viewtopic.php?t=1988&postdays=0&postorder=asc&start=60
                 year = lt.tm_year
                 yday = lt.tm_yday - lt.tm_wday + self._weekDay
                 if yday > 365:

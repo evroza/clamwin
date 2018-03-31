@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        EmailAlert.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -89,7 +89,7 @@ class VirusAlertMsg(EmailMsg):
                 User, Password, Reports=(), Body=None):
         if Body is None:
             # get computer name for the message body
-            Body = 'ClamWin detected a virus on the following computer: %s\n\n' \
+            Body = 'Blindata detected a virus on the following computer: %s\n\n' \
                     'Please review the attached log files for more details.\n' % Utils.GetHostName()
 
         self._host = Host

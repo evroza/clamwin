@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxFrameMain.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -92,7 +92,7 @@ class wxMainFrame(wxFrame):
         parent.Append(helpString='Downloads latest virus database from the Internet',
               id=wxID_WXMAINFRAMETOOLSDBUPDATE,
               item='Download &Virus Database Update', kind=wxITEM_NORMAL)
-        parent.AppendMenu(helpString='Displays ClamWin Log Files',
+        parent.AppendMenu(helpString='Displays Blindata Log Files',
               id=wxID_WXMAINFRAMETOOLSREPORTS, item='&Display Reports',
               subMenu=self.Reports)
         EVT_MENU(self, wxID_WXMAINFRAMETOOLSPREFERENCES,
@@ -109,14 +109,14 @@ class wxMainFrame(wxFrame):
     def _init_coll_Help_Items(self, parent):
         # generated method, don't edit
 
-        parent.Append(helpString='Displays ClamWin Free Antivirus Manual',
+        parent.Append(helpString='Displays Blindata Antivirus Manual',
               id=wxID_WXMAINFRAMEHELPHELP, item='&Help', kind=wxITEM_NORMAL)
         parent.Append(helpString='Opens Support Forum in the Web Browser',
               id=wxID_WXMAINFRAMEHELPSUPPORT, item='&Technical Support', kind=wxITEM_NORMAL)
         parent.Append(helpString='Checks for the Latest Version',
               id=wxID_WXMAINFRAMEHELPUPDATE, item='&Check Latest Version', kind=wxITEM_NORMAL)
-        parent.Append(helpString='Opens ClamWin Free Antivirus Website',
-              id=wxID_WXMAINFRAMEHELPWEBSITE, item='ClamWin &Website', kind=wxITEM_NORMAL)
+        parent.Append(helpString='Opens Blindata Antivirus Website',
+              id=wxID_WXMAINFRAMEHELPWEBSITE, item='Blindata &Website', kind=wxITEM_NORMAL)
 
         parent.Append(helpString='Opens Frequently Asked Questions Page in the Web Browser',
               id=wxID_WXMAINFRAMEHELPFAQ, item='&FAQ', kind=wxITEM_NORMAL)
@@ -231,11 +231,11 @@ class wxMainFrame(wxFrame):
         # generated method, don't edit
         wxFrame.__init__(self, id=wxID_WXMAINFRAME, name='wxMainFrame',
               parent=prnt, pos=wxPoint(250, 143), size=wxSize(568, 430),
-              style=wxDEFAULT_FRAME_STYLE, title='ClamWin Free Antivirus')
+              style=wxDEFAULT_FRAME_STYLE, title='Blindata Antivirus')
         self._init_utils()
         self.SetClientSize(wxSize(560, 403))
         self.SetMenuBar(self.menuBar)
-        self.SetHelpText('ClamWin Free Antivirus')
+        self.SetHelpText('Blindata Antivirus')
         self.Center(wxBOTH)
 
         self.toolBar = wxToolBar(id=wxID_WXMAINFRAMETOOLBAR, name='toolBar',
@@ -347,13 +347,13 @@ class wxMainFrame(wxFrame):
             # or no item is selected in the tree
             configured = self._IsConfigured()
             if not configured:
-                if wxID_YES == MsgBox.MessageBox(None, 'ClamWin Free Antivirus', 'ClamWin Free Antivirus is not configured. Would you like to configure it now?', wxYES_NO | wxICON_QUESTION):
+                if wxID_YES == MsgBox.MessageBox(None, 'Blindata Antivirus', 'Blindata Antivirus is not configured. Would you like to configure it now?', wxYES_NO | wxICON_QUESTION):
                     wxDialogUtils.wxConfigure(None, self._config)
                     configured = self._IsConfigured()
 
             hasdb = Utils.CheckDatabase(self._config)
             if configured and not hasdb:
-                if wxID_YES == MsgBox.MessageBox(None, 'ClamWin Free Antivirus', 'You have not yet downloaded Virus Definitions Database. Would you like to download it now?', wxYES_NO | wxICON_QUESTION):
+                if wxID_YES == MsgBox.MessageBox(None, 'Blindata Antivirus', 'You have not yet downloaded Virus Definitions Database. Would you like to download it now?', wxYES_NO | wxICON_QUESTION):
                     wxDialogUtils.wxUpdateVirDB(self, self._config)
                     hasdb = Utils.CheckDatabase(self._config)
 
@@ -373,7 +373,7 @@ class wxMainFrame(wxFrame):
 
             # print updated, time.mktime(time.localtime()), time.mktime(time.localtime()) - updated
             if hasdb and self._config.Get('Updates', 'WarnOutOfDate') == '1' and (time.mktime(time.localtime()) - updated > 86400*5):
-                if wxID_YES == MsgBox.MessageBox(None, 'ClamWin Free Antivirus', 'Virus signature database is older than 5 days and may not offer the latest protection. Would you like to update it now?', wxYES_NO | wxICON_QUESTION):
+                if wxID_YES == MsgBox.MessageBox(None, 'Blindata Antivirus', 'Virus signature database is older than 5 days and may not offer the latest protection. Would you like to update it now?', wxYES_NO | wxICON_QUESTION):
                     wxDialogUtils.wxUpdateVirDB(self, self._config)
                     hasdb = Utils.CheckDatabase(self._config)
 
@@ -418,18 +418,18 @@ class wxMainFrame(wxFrame):
                     MsgBox.ErrorBox(self, 'Could not open help file. Please ensure that you have Adobe Acrobat Reader installed.')
 
     def OnHelpFAQ(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://www.clamwin.com/content/category/3/7/27/')
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.com/content/category/3/7/27/')
 
     def OnHelpSupport(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://forums.clamwin.com/')
+        wxDialogUtils.wxGoToInternetUrl('http://forums.blindata.com/')
 
 
     def OnHelpUpdate(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://www.clamwin.com/index.php?option=content&task=view&id=40&Itemid=60&version='+version.clamwin_version)
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.com/index.php?option=content&task=view&id=40&Itemid=60&version='+version.clamwin_version)
 
 
     def OnHelpWebsite(self, event):
-        wxDialogUtils.wxGoToInternetUrl('http://www.clamwin.com')
+        wxDialogUtils.wxGoToInternetUrl('http://www.blindata.com')
 
 class wxGenericDirCtrlEx(wxGenericDirCtrl):
     def __init__(self,*_args,**_kwargs):

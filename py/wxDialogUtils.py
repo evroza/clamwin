@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        wxDialogUtils.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -61,7 +61,7 @@ def wxUpdateVirDB(parent, config, autoClose = False):
         tray_notify_params = None
 
     dlg = wxDialogStatus.create(parent, cmd, None, 'n', 'update', tray_notify_params)
-    dlg.SetTitle('ClamWin Free Antivirus: Downloading Update...')
+    dlg.SetTitle('Blindata Antivirus: Downloading Update...')
     dlg.SetAutoClose(autoClose)
     try:
         dlg.ShowModal()
@@ -148,7 +148,7 @@ def wxScan(parent, config, path, autoClose = False):
     else:
         tray_notify_params = None
     dlg = wxDialogStatus.create(parent, cmd, scanlog, priority, "scanprogress", tray_notify_params)
-    dlg.SetTitle("ClamWin Free Antivirus: Scanning...")
+    dlg.SetTitle("Blindata Antivirus: Scanning...")
     dlg.SetAutoClose(autoClose, 0)
     try:
         dlg.ShowModal()
@@ -193,7 +193,7 @@ def wxAbout(parent, config):
 def wxShowLog(parent, logfile):
         maxlogsize = 524288 #512 KB
         if not len(logfile):
-            MsgBox.ErrorBox(parent, 'Log files are not properly configured. Please review ClamWin configuration')
+            MsgBox.ErrorBox(parent, 'Log files are not properly configured. Please review Blindata configuration')
         try:
             if not os.path.isfile(logfile):
                 text = ''

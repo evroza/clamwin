@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        ClamWin.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #

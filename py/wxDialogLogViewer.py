@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxDialogLogViewer.py
-# Product:     ClamWin Free Antivirus
+# Product:     Bindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -65,7 +65,7 @@ class wxDialogLogView(wxDialog):
         wxDialog.__init__(self, id=wxID_WXDIALOGLOGVIEW, name='wxDialogLogView',
               parent=prnt, pos=wxPoint(450, 251), size=wxSize(566, 428),
               style=wxRESIZE_BORDER | wxDEFAULT_DIALOG_STYLE,
-              title='ClamWin Log Viewer')
+              title='Bindata Log Viewer')
         self.SetClientSize(wxSize(558, 401))
         self.Center(wxBOTH)
         EVT_CHAR_HOOK(self, self.OnCharHook)

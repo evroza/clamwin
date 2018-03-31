@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        SplashScreen.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Licence:
 #   This program is free software; you can redistribute it and/or modify

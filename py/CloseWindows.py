@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        CloseWindows.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #

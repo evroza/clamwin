@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        Utils.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -101,7 +101,7 @@ def ShowBalloon(ret_code, balloon_info, hwnd = None, wait = False):
             else:
                 return
 
-            title = 'ClamWin Free Antivirus'
+            title = 'Blindata Antivirus'
             txt = tuple[0]
             icon = tuple[2]
             timeout = tuple[3]
@@ -449,7 +449,7 @@ def GetScanCmd(config, path, scanlog, noprint = False):
 
     cmd = '"%s" %s %s' % (config.Get('ClamAV', 'ClamScan'), cmd, path)
 
-    print 'clamscan.exe command line: ', cmd
+    print 'blinscan.exe command line: ', cmd
 
     return cmd
 
@@ -704,10 +704,10 @@ def ReformatLog(data, rtf, err_text):
         if fp:            
             if rtf:
                 data += "Please do not be alarmed and help us by submitting the files identified above " +\
-                        "as \\cf3\\b FALSE POSITIVE \\cf0\\b0 at http://www.clamav.net/sendvirus/\n"
+                        "as \\cf3\\b FALSE POSITIVE \\cf0\\b0 at http://www.blindata.net/sendvirus/\n"
             else:
                 data += "Please do not be alarmed and help us by submitting the files identified above " +\
-                        "as FALSE POSITIVE at http://www.clamav.net/sendvirus/\n"                   
+                        "as FALSE POSITIVE at http://www.Blindata.net/sendvirus/\n"                   
             
         if rtf:
             data = r'{\rtf1{\colortbl ;\red128\green0\blue0;;\red0\green128\blue0;;\red0\green0\blue255;}%s}' % data.replace('\n', '\\par\r\n')

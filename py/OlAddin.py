@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        OlAddin.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -23,7 +23,7 @@
 
 
 #-----------------------------------------------------------------------------
-# ClamWin Outlook Addin
+# Blindata Outlook Addin
 # Parts of the code based on SpamBayes Source Code (Outlook2000/addin.py)
 # Thanks to Sean True and Mark Hammond
 
@@ -204,7 +204,7 @@ def HelpAbout():
         curDir = Utils.GetCurrentDir(True)
         Utils.SpawnPyOrExe(True, os.path.join(curDir, 'ClamWin'), ' --mode=about')
     except Exception, e:
-        win32gui.MessageBox(GetWindow(), 'An error occured in ClamWin Free Antivirus About Box.\n' + str(e), 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+        win32gui.MessageBox(GetWindow(), 'An error occured in Blindata Antivirus About Box.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
 # Helpers to work with images on buttons/toolbars.
 def SetButtonImage(button, fname):
@@ -260,7 +260,7 @@ def ScanFile(path, config, attname):
 
     if virusFound:
         try:
-            file(logfile, 'w+t').write('ClamWin Free Antivirus report:\n\n%s virus has been found in the attached file %s!' % (virusName, attname))
+            file(logfile, 'w+t').write('Blindata Free Antivirus report:\n\n%s virus has been found in the attached file %s!' % (virusName, attname))
         except Exception, e:
             raise ScanError('An Error occured whilst saving scan report: %s' % str(e))
     return (virusFound, logfile)
@@ -377,8 +377,8 @@ def ScanMailItem(item, sending, added_attachments = None):
                         # along with temp dir
                         safe_remove(statusfile, True)
                     except Exception, e:
-                        msg = 'ClamWin Free Antivirus could not scan file%s\n.Error: %s' % (statusfile, str(e))
-                    win32gui.MessageBox(GetWindow(), msg, 'ClamWin Free Antivirus', win32con.MB_ICONERROR | win32con.MB_OK)
+                        msg = 'Blindata Antivirus could not scan file%s\n.Error: %s' % (statusfile, str(e))
+                    win32gui.MessageBox(GetWindow(), msg, 'Blindata Antivirus', win32con.MB_ICONERROR | win32con.MB_OK)
                     return 1
                 else:
                     # bugfix [930909]
@@ -428,7 +428,7 @@ def ScanMailItem(item, sending, added_attachments = None):
             # warn a user becuase it will not change the attachments info in
             # the event handlers
             if int(item.Application.Version.split('.', 1)[0]) < 10:
-                msg = 'ClamWin Free Antivirus has detected a virus in the message attachments!'
+                msg = 'Blindata Antivirus has detected a virus in the message attachments!'
                 win32gui.MessageBox(GetWindow(), msg, 'Virus Detected!', win32con.MB_ICONERROR | win32con.MB_OK)
             elif config.Get('UI', 'TrayNotify') == '1':
                 # show balloon in outlook 2002 +
@@ -450,7 +450,7 @@ def ScanMailItem(item, sending, added_attachments = None):
         safe_remove(dir)
 
         # display error
-        win32gui.MessageBox(GetWindow(), str(e), 'ClamWin Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
+        win32gui.MessageBox(GetWindow(), str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
         return True
 
     return len(infected)
@@ -548,8 +548,8 @@ class ExplorerWithEvents(ObjectWithEvents):
         child = self._AddControl(popup,
                        constants.msoControlButton,
                        ButtonEvent, (HelpAbout, ),
-                       Caption="&About ClamWin Free Antivirus",
-                       TooltipText = "Shows the ClamWin About Box",
+                       Caption="&About Blindata Antivirus",
+                       TooltipText = "Shows the Blindata About Box",
                        Enabled = True,
                        Visible=True,
                        Tag = "ClamWin.About")
@@ -801,8 +801,8 @@ class MailItemWithEvents(ObjectWithEvents):
             except Exception, e:
                 for saved in saved_attachments:
                     safe_remove(saved[1], True)
-                msg = 'ClamWin Free Antivirus could not replace an attachment. Error: %s' % str(e)
-                win32gui.MessageBox(GetWindow(), msg, 'ClamWin Free Antivirus!', win32con.MB_ICONERROR | win32con.MB_OK)
+                msg = 'Blindata Antivirus could not replace an attachment. Error: %s' % str(e)
+                win32gui.MessageBox(GetWindow(), msg, 'Blindata Antivirus!', win32con.MB_ICONERROR | win32con.MB_OK)
 
     def OnWrite(self, cancel):
         dbg_print('MailItemWithEvents:OnWrite')
@@ -871,7 +871,7 @@ class OutlookAddin(ObjectsEvent):
         except:
             print "Error connecting to Outlook!"
             traceback.print_exc()
-            print "There was an error initializing the ClamWin addin\r\n\r\n"\
+            print "There was an error initializing the Blindata addin\r\n\r\n"\
                 "Please re-start Outlook and try again."
 
     def OnStartupComplete(self, custom):
@@ -893,7 +893,7 @@ class OutlookAddin(ObjectsEvent):
                     pyc.setDBTimer(pyc.SELFCHECK_ALWAYS)
                     pyc.loadDB()
                 except Exception, e:
-                    raise ScanError('ClamWin Error occured whilst loading virus database: %s' % str(e))
+                    raise ScanError('Blindata Error occured whilst loading virus database: %s' % str(e))
                 dbg_print('Database has been loaded from %s' % config.Get('ClamAV', 'Database'))
 
                 #show splashcreen
@@ -933,7 +933,7 @@ class OutlookAddin(ObjectsEvent):
         self.application = None
 
     def OnDisconnection(self, mode, custom):
-        dbg_print('ClamWin - Disconnecting from Outlook')
+        dbg_print('Blindata - Disconnecting from Outlook')
         try:
             if hLibClamAV != 0:
                 win32api.FreeLibrary(hLibClamAV)
@@ -972,8 +972,8 @@ def _DoRegister(klass, root):
     subkey = _winreg.CreateKey(key, klass._reg_progid_)
     _winreg.SetValueEx(subkey, "CommandLineSafe", 0, _winreg.REG_DWORD, 0)
     _winreg.SetValueEx(subkey, "LoadBehavior", 0, _winreg.REG_DWORD, 3)
-    _winreg.SetValueEx(subkey, "Description", 0, _winreg.REG_SZ, "ClamWin Free Antivirus")
-    _winreg.SetValueEx(subkey, "FriendlyName", 0, _winreg.REG_SZ, "ClamWin Free Antivirus")
+    _winreg.SetValueEx(subkey, "Description", 0, _winreg.REG_SZ, "Blindata Antivirus")
+    _winreg.SetValueEx(subkey, "FriendlyName", 0, _winreg.REG_SZ, "Blindata Antivirus")
 
 # Note that Addins can be registered either in HKEY_CURRENT_USER or
 # HKEY_LOCAL_MACHINE.  If the former, then:

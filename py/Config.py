@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        Config.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -54,13 +54,13 @@ class Settings:
         [0, {'Enable': '1', 'Frequency': 'Daily', 'Time': '10:00:00',
             'WeekDay': '2', 'DBMirror': 'database.clamav.net',
             'DBUpdateLogFile': '', 'UpdateOnLogon': '0', 'WarnOutOfDate': '1',
-            'CheckVersion': '1', 'CheckVersionURL': 'http://clamwin.sourceforge.net/clamwinver.php'}],
+            'CheckVersion': '1', 'CheckVersionURL': 'http://blindata.sourceforge.net/blindatawinver.php'}],
         'EmailAlerts':
         [0, {'Enable': '0',
              'SMTPHost': '', 'SMTPPort': '25', 'SMTPUser':'',
              'SMTPPassword': '',
-             'From': 'clamwin@yourdomain', 'To': 'admin@yourdomain',
-             'Subject': 'ClamWin Virus Alert'}],
+             'From': 'blindata@yourdomain', 'To': 'admin@yourdomain',
+             'Subject': 'Blindata Virus Alert'}],
         'UI':
         [0, {'TrayNotify': '1', 'ReportInfected': '1', 'Standalone': '0', 'Version': ''}],
         'Schedule':
@@ -94,8 +94,8 @@ class Settings:
 
         # rewrite CheckVersionURL for earlier versions
         if self._settings['UI'][1]['Version'] < '0.90.2.1' and \
-           self._settings['Updates'][1]['CheckVersionURL'] == 'http://clamwin.sourceforge.net/clamwin.ver':
-            self._settings['Updates'][1]['CheckVersionURL'] = 'http://clamwin.sourceforge.net/clamwinver.php'
+           self._settings['Updates'][1]['CheckVersionURL'] == 'http://blindata.sourceforge.net/blindatawin.ver':
+            self._settings['Updates'][1]['CheckVersionURL'] = 'http://blindata.sourceforge.net/blindatawinver.php'
             write = True
             
         # change MAxRecursion setting

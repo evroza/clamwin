@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------
 # Name:        ExplorerShell.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -57,7 +57,7 @@ class ShellExtension:
         except pythoncom.com_error:
             return 0
         num_files = shell.DragQueryFile(sm.data_handle, -1)
-        msg = "Scan For Viruses With ClamWin"
+        msg = "Scan For Viruses With Blindata"
         if num_files>1:
             # we aren't handling multiple files
             return 0
@@ -129,7 +129,7 @@ class ShellExtension:
                 win32gui.MessageBox(hwnd, 'Could not execute %s.' % cmd, 'ClamWin', win32con.MB_OK | win32con.MB_ICONEXCLAMATION)
 
     def GetCommandString(self, cmd, typ):
-        return "ClamWin Free Antivirus"
+        return "Blindata Free Antivirus"
 
 def DllRegisterServer():
     import _winreg

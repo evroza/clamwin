@@ -3,7 +3,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxDialogStatus.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -119,7 +119,7 @@ class wxDialogStatus(wxDialog):
         # generated method, don't edit
         wxDialog.__init__(self, id=wxID_WXDIALOGSTATUS, name='wxDialogStatus',
               parent=prnt, pos=wxPoint(449, 269), size=wxSize(568, 392),
-              style=wxDEFAULT_DIALOG_STYLE, title='ClamWin Free Antivirus Status')
+              style=wxDEFAULT_DIALOG_STYLE, title='Blindata Antivirus Status')
         self.SetClientSize(wxSize(560, 365))
         self.SetAutoLayout(false)
         self.Center(wxBOTH)
@@ -292,7 +292,7 @@ class wxDialogStatus(wxDialog):
                     dlg = wxMessageDialog(self, 'Could not save report to the file ' + \
                                             filename + ". Please check that you have write "
                                             "permissions to the folder and there is enough space on the disk.",
-                      'ClamWin Free Antivirus', wxOK | wxICON_ERROR)
+                      'Blindata Antivirus', wxOK | wxICON_ERROR)
                     try:
                         dlg.ShowModal()
                     finally:
@@ -341,9 +341,9 @@ class wxDialogStatus(wxDialog):
         self.buttonStop.SetLabel('&Close')
         
         if self._scan:
-            self.SetTitle("ClamWin Free Antivirus: Scan Complete")
+            self.SetTitle("Blindata Antivirus: Scan Complete")
         else:
-            self.SetTitle("ClamWin Free Antivirus: Download Complete")
+            self.SetTitle("Blindata Antivirus: Download Complete")
         
 
         data = ""

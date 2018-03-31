@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------------------------------
 # Name:        wxDialogCheckUpdate.py
-# Product:     ClamWin Free Antivirus
+# Product:     Blindata Free Antivirus
 #
 # Author:      alch [alch at users dot sourceforge dot net]
 #
@@ -57,7 +57,7 @@ class wxDialogUpdateChecker(wxDialog):
         EVT_INIT_DIALOG(self, self.OnInitDialog)
 
         self.staticTextAnnounce = wxStaticText(id=wxID_WXDIALOGUPDATECHECKERSTATICTEXTANNOUNCE,
-              label='An update of ClamWin Free Antivirus has been released. Please click on Download button and download the latest version %s',
+              label='An update of Blindata Antivirus has been released. Please click on Download button and download the latest version %s',
               name='staticTextAnnounce', parent=self, pos=wxPoint(13, 8),
               size=wxSize(296, 40), style=wxST_NO_AUTORESIZE)
         self.staticTextAnnounce.SetForegroundColour(wxColour(170, 0, 0))
