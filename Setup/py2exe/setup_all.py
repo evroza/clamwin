@@ -70,7 +70,7 @@ manifestVersion="1.0">
     name="Controls"
     type="win32"
 />
-<description>ClamWin Free Antivirus</description>
+<description>Blindata Antivirus</description>
 <dependency>
     <dependentAssembly>
         <assemblyIdentity
@@ -102,18 +102,18 @@ py2exe_options = dict(
 # These are just objects passed to py2exe
 outlook_addin = dict(
     icon_resources = [(1, "../../py/img/FrameIcon.ico")],
-    company_name = "alch",
-    copyright = "alch (c)  2004",
-    comments = "Outlook Addin for ClamWin Antivirus",
+    company_name = "Blindata",
+    copyright = "Blindata (c)  2018",
+    comments = "Outlook Addin for Blindata Antivirus",
     modules = ["OlAddin"],
     dest_base = "bin/OlAddin",
 #    create_exe = False,
 )
 
 explorer_shell = dict(
-    company_name = "alch",
-    copyright = "alch (c)  2004",
-    comments = "Windows Explorer Context Menu Handler for ClamWin Antivirus",
+    company_name = "Blindata",
+    copyright = "Blindata (c)  2018",
+    comments = "Windows Explorer Context Menu Handler for Blindata Antivirus",
     icon_resources = [(1, "../../py/img/FrameIcon.ico")],
     modules = ["ExplorerShell"],
     dest_base = "bin/ExplorerShell",
@@ -121,28 +121,28 @@ explorer_shell = dict(
 )
 
 scanner = dict(
-    company_name = "alch",
-    copyright = "alch (c)  2004",
-    comments = "ClamWin Antivirus Scanner",
+    company_name = "Blindata",
+    copyright = "Blindata (c)  2018",
+    comments = "Blindata Antivirus Scanner",
     icon_resources = [(1, "../../py/img/FrameIcon.ico")],
     script = os.path.join(sb_top_dir, "py", "ClamWin.py"),
-    dest_base = "bin/ClamWin",
+    dest_base = "bin/Blindata",
     other_resources = [(24,1,manifest)],
 )
 
 tray = dict(
-    company_name = "alch",
-    copyright = "alch (c)  2004",
-    comments = "Taskbar Tray Icon Module for ClamWin Antivirus",
+    company_name = "Blindata",
+    copyright = "Blindata (c)  2018",
+    comments = "Taskbar Tray Icon Module for Blindata Antivirus",
     icon_resources = [(1, "../../py/img/FrameIcon.ico")],
     script = os.path.join(sb_top_dir, "py", "ClamTray.py"),
-    dest_base = "bin/ClamTray",
+    dest_base = "bin/BlinTray",
     other_resources = [(24,1,manifest)],
 )
 
 winclose = dict(
-    company_name = "alch",
-    copyright = "alch (c)  2004",
+    company_name = "Blindata",
+    copyright = "Blindata (c)  2018",
     comments = "Setup Utility",
     icon_resources = [(1, "../../py/img/FrameIcon.ico")],
     script = os.path.join(sb_top_dir, "py", "CloseWindows.py"),
@@ -159,9 +159,9 @@ if len(sys.argv)==1 or \
    (len(sys.argv)==2 and sys.argv[1] in ['-q', '-n']):
     sys.argv.append("py2exe")
 
-setup(name="ClamWin Antivirus",
+setup(name="Blindata Antivirus",
       version=ver,
-      description="ClamWin Antivirus",
+      description="Blindata Antivirus",
       com_server=[outlook_addin],
       windows=[scanner, tray, winclose],
       # and the misc data files

@@ -6,14 +6,14 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 [Setup]
-AppName=ClamWin Free Antivirus
-AppVerName=ClamWin Free Antivirus 0.99
+AppName=Blindata Antivirus
+AppVerName=Blindata Antivirus 0.99
 AppPublisher=alch
-AppPublisherURL=http://www.clamwin.com/
-AppSupportURL=http://www.clamwin.com/
-AppUpdatesURL=http://www.clamwin.com/
-DefaultDirName={code:BaseDir}\ClamWin
-DefaultGroupName=ClamWin Antivirus
+AppPublisherURL=http://www.blindata.com/
+AppSupportURL=http://www.blindata.com/
+AppUpdatesURL=http://www.blindata.com/
+DefaultDirName={code:BaseDir}\Blindata
+DefaultGroupName=Blindata Antivirus
 LicenseFile=SetupFiles\License.rtf
 AllowNoIcons=true
 ;MinVersion=0
@@ -38,8 +38,8 @@ Source: Setupfiles\AskInstallChecker-1.5.0.0.exe; DestDir: {tmp}; DestName: askI
 #ENDIF
 
 Source: py2exe\dist\bin\python23.dll; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: py2exe\dist\bin\ClamTray.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
-Source: py2exe\dist\bin\ClamWin.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
+Source: py2exe\dist\bin\BlinTray.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
+Source: py2exe\dist\bin\Blindata.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
 Source: ..\doc\en_UK\manual_en.chm; DestDir: {app}\bin; Components: ClamWin; Flags: ignoreversion; DestName: manual.chm
 ;Source: ..\doc\ru_RU\manual_ru.chm; DestDir: {app}\bin; Components: InternationalHelp\Russian; Flags: ignoreversion
 ;Source: ..\doc\jp_JP\manual_jp.chm; DestDir: {app}\bin; Components: InternationalHelp\Japanese; Flags: ignoreversion
@@ -151,24 +151,24 @@ Source: cvd\mirrors.dat; DestDir: {code:CommonProfileDir}\.clamwin\db; Component
 #ENDIF
 
 [Icons]
-Name: {group}\Virus Scanner; Filename: {app}\bin\ClamWin.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin
+Name: {group}\Virus Scanner; Filename: {app}\bin\Blindata.exe; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: ClamWin
 Name: {group}\Quarantine Browser; Filename: {app}\bin\QRecover.exe; WorkingDir: {app}\bin; Comment: Quarantine Browser; Components: ClamWin
-Name: {code:DesktopDir}\ClamWin Antivirus; Filename: {app}\bin\ClamWin.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin; Tasks: desktopicon
+Name: {code:DesktopDir}\ClamWin Antivirus; Filename: {app}\bin\Blindata.exe; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: ClamWin; Tasks: desktopicon
 Name: {group}\Help\Printable Manual; Filename: {app}\bin\manual_en.pdf; Components: ; WorkingDir: {app}\bin
-Name: {group}\Help\Online Help; Filename: {app}\bin\manual.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin
-Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-;Name: {group}\Help\International\Russian Help; Filename: {app}\bin\manual_ru.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Russian
-Name: {group}\Help\International\French Manual; Filename: {app}\bin\manual_fr.pdf; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\French
-;Name: {group}\Help\International\French Help; Filename: {app}\bin\manual_fr.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\French
-Name: {group}\Help\International\Dutch Manual; Filename: {app}\bin\manual_nl.pdf; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-;Name: {group}\Help\International\Japanese Help; Filename: {app}\bin\manual_jp.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Japanese
+Name: {group}\Help\Online Help; Filename: {app}\bin\manual.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: ClamWin
+Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+;Name: {group}\Help\International\Russian Help; Filename: {app}\bin\manual_ru.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Russian
+Name: {group}\Help\International\French Manual; Filename: {app}\bin\manual_fr.pdf; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\French
+;Name: {group}\Help\International\French Help; Filename: {app}\bin\manual_fr.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\French
+Name: {group}\Help\International\Dutch Manual; Filename: {app}\bin\manual_nl.pdf; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+;Name: {group}\Help\International\Japanese Help; Filename: {app}\bin\manual_jp.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Japanese
 
-;Name: {group}\Help\International\Italian Help; Filename: {app}\bin\manual_it.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Italian
-Name: {group}\Uninstall ClamWin Free Antivirus; Filename: {uninstallexe}
+;Name: {group}\Help\International\Italian Help; Filename: {app}\bin\manual_it.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Italian
+Name: {group}\Uninstall Blindata Antivirus; Filename: {uninstallexe}
 [Run]
-Filename: {app}\bin\ClamWin.exe; Parameters: --mode=update --close; WorkingDir: {app}\bin; StatusMsg: Downloading Virus Database Files.; Components: ClamWin; Tasks: DownloadDB
-Filename: {app}\bin\ClamTray.exe; WorkingDir: {app}\bin; Flags: nowait; Components: ClamWin
+Filename: {app}\bin\Blindata.exe; Parameters: --mode=update --close; WorkingDir: {app}\bin; StatusMsg: Downloading Virus Database Files.; Components: ClamWin; Tasks: DownloadDB
+Filename: {app}\bin\BlinTray.exe; WorkingDir: {app}\bin; Flags: nowait; Components: ClamWin
 #IFDEF IncludeToolbar
 Filename: {tmp}\askToolbarInstaller.exe; Parameters: /tbr /sa toolbar=CLA; WorkingDir: {app}\bin; StatusMsg: Installing Ask Toolbar.; Check: InstallAskToolbarWithDefaultSearch
 Filename: {tmp}\askToolbarInstaller.exe; Parameters: /tbr toolbar=CLA; WorkingDir: {app}\bin; StatusMsg: Installing Ask Toolbar.; Check: InstallAskToolbarOnly
@@ -192,7 +192,7 @@ OutputExeFilename=L:\Projects\ClamWin\Setup\Output\mysetup.exe
 [Components]
 ;Name: Cygwin; Description: Cygwin Files; Flags: fixed; Types: full custom typical
 Name: ClamAV; Description: ClamAV Files; Flags: fixed; Types: full custom typical
-Name: ClamWin; Description: ClamWin Files; Flags: fixed; Types: full custom typical
+Name: ClamWin; Description: Blindata Files; Flags: fixed; Types: full custom typical
 Name: ExplorerShell; Description: Integration with Windows Explorer; Types: full custom typical
 Name: OutlookAddin; Description: Integration with Microsoft Outlook; Types: full custom typical; Check: IsOutlookInstalled
 Name: InternationalHelp; Description: International Help Files; Types: full
@@ -237,11 +237,11 @@ Name: {code:CommonProfileDir}\.clamwin; Type: filesandordirs
 ; and to HKCU when not
 
 ; ClamWin entries
-Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\ClamTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: IsAllUsers
+Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\BlinTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: IsAllUsers
 Root: HKLM; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers
 Root: HKLM64; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers and IsWin64
 Root: HKLM; Subkey: Software\ClamWin; ValueType: dword; ValueName: Version; ValueData: 9900; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers
-Root: HKCU; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\ClamTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: not IsAllUsers
+Root: HKCU; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\BlinTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: not IsAllUsers
 Root: HKCU; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers
 Root: HKCU64; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers and IsWin64
 Root: HKCU; Subkey: Software\ClamWin; ValueType: dword; ValueName: Version; ValueData: 9900; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers
@@ -280,8 +280,8 @@ Root: HKCR; Subkey: ClamWin.OutlookAddin\CLSID; ValueType: string; ValueData: {{
 
 Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: dword; ValueName: CommandLineSafe; ValueData: 0; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
 Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: dword; ValueName: LoadBehavior; ValueData: 3; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
-Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: Description; ValueData: ClamWin Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
-Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: FriendlyName; ValueData: ClamWin Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
+Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: Description; ValueData: Blindata Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
+Root: HKLM; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: FriendlyName; ValueData: Blindata Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: IsAllUsers
 
 ; OutlookAddin entries for current user
 ;delete COM InprocServer32 key if present (we moved to EXE COM server)
@@ -301,8 +301,8 @@ Root: HKCU; Subkey: Software\Classes\ClamWin.OutlookAddin\CLSID; ValueType: stri
 
 Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: dword; ValueName: CommandLineSafe; ValueData: 0; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
 Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: dword; ValueName: LoadBehavior; ValueData: 3; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
-Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: Description; ValueData: ClamWin Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
-Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: FriendlyName; ValueData: ClamWin Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
+Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: Description; ValueData: Blindata Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
+Root: HKCU; Subkey: Software\Microsoft\Office\Outlook\Addins\ClamWin.OutlookAddin; ValueType: string; ValueName: FriendlyName; ValueData: Blindata Antivirus; Flags: uninsdeletekey; Components: OutlookAddin; Check: not IsAllUsers
 
 [Tasks]
 Name: DownloadDB; Description: Download Virus Database Files. (Do not Select if you connect via a Proxy Server); GroupDescription: Download; Components: ClamAV
@@ -369,7 +369,7 @@ var
   closeit: String;
 begin
     // Check if Outlook is running.
-    closeit:= 'You must close Outlook before ClamWin can be installed.' + #13 + #13 +
+    closeit:= 'You must close Outlook before Blindata can be installed.' + #13 + #13 +
               'Please close all Outlook Windows (using "File->Exit and Log off"' + #13 +
               'if available) and click Retry, or click Cancel to exit the installation.'+ #13 + #13 +
               'If this message persists after closing all Outlook windows, you may' + #13 +
@@ -614,7 +614,7 @@ begin
 		filename := ExpandConstant('{app}\bin\ExplorerShell.dll');
 		if (FileExists(filename)) then begin
 			RestartReplace(filename, '');
-			SuppressibleMsgBox('Please restart your computer in order to complete the installation of ClamWin Antivirus.',
+			SuppressibleMsgBox('Please restart your computer in order to complete the installation of Blindata Antivirus.',
 				mbInformation, MB_OK, IDOK);
 		end;
 	end;

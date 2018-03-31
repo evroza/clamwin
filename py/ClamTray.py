@@ -423,7 +423,7 @@ class MainWindow:
             try:
                 curDir = Utils.GetCurrentDir(True)
                 params = (' --mode=checkversion', )
-                ok = Utils.SpawnPyOrExe(True, os.path.join(curDir, 'ClamWin'), *params) == 0
+                ok = Utils.SpawnPyOrExe(True, os.path.join(curDir, 'Blindata'), *params) == 0
             except Exception, e:
                 print 'checkversion error: %s' % str(e)
 
@@ -471,7 +471,7 @@ class MainWindow:
         try:
             curDir = Utils.GetCurrentDir(True)
             params = (' --mode=viewlog',  '--path="%s"' % logfile)
-            Utils.SpawnPyOrExe(False, os.path.join(curDir, 'ClamWin'), *params)
+            Utils.SpawnPyOrExe(False, os.path.join(curDir, 'Blindata'), *params)
         except Exception, e:
             win32gui.MessageBox(self.hwnd, 'An error occured while displaying log file %s.\nError: %s' % (logfile, str(e)),
                                  'Blindata Free Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
@@ -482,7 +482,7 @@ class MainWindow:
                 params = (' --mode=scanner',  ' --path=\"%s\"' % path)
             else:
                 params = (' --mode=main',)
-            Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'ClamWin'), *params)
+            Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'Blindata'), *params)
         except Exception, e:
             win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus scanner.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 
@@ -490,7 +490,7 @@ class MainWindow:
         if not schedule_label:
             try:
                 params = (' --mode=update', ' --config_file="%s"' % self._config.GetFilename(),)
-                Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'ClamWin'), *params)
+                Utils.SpawnPyOrExe(False, os.path.join(Utils.GetCurrentDir(True), 'Blindata'), *params)
             except Exception, e:
                 win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus Update.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
         else: # update virus db silently
@@ -568,7 +568,7 @@ class MainWindow:
                 mode = 'configure'
             params = (' --mode=%s' % mode,
                         ' --config_file="%s"' % self._config.GetFilename(),)
-            Utils.SpawnPyOrExe(False, os.path.join(curDir, 'ClamWin'), *params)
+            Utils.SpawnPyOrExe(False, os.path.join(curDir, 'Blindata'), *params)
         except Exception, e:
             win32gui.MessageBox(self.hwnd, 'An error occured while starting Blindata Antivirus Preferences.\n' + str(e), 'Blindata Antivirus', win32con.MB_OK | win32con.MB_ICONERROR)
 

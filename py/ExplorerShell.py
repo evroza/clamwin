@@ -117,7 +117,7 @@ class ShellExtension:
         # multiple Windows Explorer instances
         # read this value from registry
 
-        exe = os.path.join(currentDir, 'ClamWin.exe')
+        exe = os.path.join(currentDir, 'Blindata.exe')
         if not os.path.exists(exe):
             win32gui.MessageBox(hwnd, 'Could not locate file: %s'% exe, 'ClamWin', win32con.MB_OK | win32con.MB_ICONEXCLAMATION)
         else:

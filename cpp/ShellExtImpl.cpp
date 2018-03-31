@@ -241,7 +241,7 @@ BOOL CShellExt::Scan(HWND hwnd)
     if(szPathExpanded[len-1] == _T('\\'))
         szPathExpanded[len-1] = _T('\0');
     _sntprintf(szCmd, szCmdSize, _T("\"%s\\%s\" --mode=scanner %s"),
-                szPathExpanded, _T("ClamWin.exe"), m_szPath);
+                szPathExpanded, _T("Blindata.exe"), m_szPath);
 
     // read  optional params from registry
     if (ERROR_SUCCESS == RegOpenKeyEx(HKEY_CURRENT_USER,

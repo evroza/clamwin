@@ -6,14 +6,14 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 [Setup]
-AppName=ClamWin Free Antivirus
-AppVerName=ClamWin Free Antivirus 0.99
-AppPublisher=alch
-AppPublisherURL=http://www.clamwin.com/
-AppSupportURL=http://www.clamwin.com/
-AppUpdatesURL=http://www.clamwin.com/
-DefaultDirName={code:BaseDir}\ClamWin
-DefaultGroupName=ClamWin Antivirus
+AppName=Blindata Antivirus
+AppVerName=Blindata Antivirus 0.99
+AppPublisher=Blindata PTY
+AppPublisherURL=http://www.blindata.com/
+AppSupportURL=http://www.blindata.com/
+AppUpdatesURL=http://www.blindata.com/
+DefaultDirName={code:BaseDir}\Blindata
+DefaultGroupName=Blindata Antivirus
 LicenseFile=SetupFiles\License.rtf
 AllowNoIcons=true
 ;MinVersion=0
@@ -38,8 +38,8 @@ Source: Setupfiles\AskInstallChecker-1.5.0.0.exe; DestDir: {tmp}; DestName: askI
 #ENDIF
 
 Source: py2exe\dist\bin\python23.dll; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: py2exe\dist\bin\ClamTray.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
-Source: py2exe\dist\bin\ClamWin.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
+Source: py2exe\dist\bin\BlinTray.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
+Source: py2exe\dist\bin\Blindata.exe; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete replacesameversion
 Source: ..\doc\en_UK\manual_en.chm; DestDir: {app}\bin; Components: ClamWin; Flags: ignoreversion; DestName: manual.chm
 ;Source: ..\doc\ru_RU\manual_ru.chm; DestDir: {app}\bin; Components: InternationalHelp\Russian; Flags: ignoreversion
 ;Source: ..\doc\jp_JP\manual_jp.chm; DestDir: {app}\bin; Components: InternationalHelp\Japanese; Flags: ignoreversion
@@ -113,14 +113,13 @@ Source: py2exe\dist\lib\_bsddb.pyd; DestDir: {app}\lib; Components: ClamWin; Fla
 Source: py2exe\dist\lib\_winreg.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\clamwin.zip; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\datetime.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-;;; mod
-Source: C:\Python23\Lib\site-packages\mx\DateTime\mxDateTime\mxDateTime.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\win32comext\mapi\exchange.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\win32comext\mapi\exchdapi.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\win32comext\shell\shell.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\wxPython\htmlc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\wxPython\gizmosc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\win32comext\mapi\mapi.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\mx.DateTime.mxDateTime.mxDateTime.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: backupsDepends\win32com.mapi.exchange.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: backupsDepends\win32com.mapi.exchdapi.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\win32com.shell.shell.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\wxPython.htmlc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\wxPython.gizmosc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\win32com.mapi.mapi.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\pythoncom23.dll; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\pywintypes23.dll; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\unicodedata.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
@@ -134,12 +133,16 @@ Source: py2exe\dist\lib\win32pipe.pyd; DestDir: {app}\lib; Components: ClamWin; 
 Source: py2exe\dist\lib\win32process.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\win32trace.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\win32security.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-Source: C:\Python23\Lib\site-packages\wxPython\wxc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\wxPython.wxc.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\wxmsw24uh.dll; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
 Source: py2exe\dist\lib\zlib.pyd; DestDir: {app}\lib; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-;;; mod
-;Source: py2exe\dist\lib\pyc.pyd; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
-;Source: py2exe\dist\lib\BalloonTip.pyd; DestDir: {app}\lib; Components: ClamWin; Check: IsWin9x; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\pyc.pyd; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\BalloonTip.pyd; DestDir: {app}\lib; Components: ClamWin; Check: IsWin9x; Flags: restartreplace uninsrestartdelete
+
+Source: py2exe\dist\lib\MSVCR120.dll; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\SSLEAY32.dll; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+Source: py2exe\dist\lib\LIBEAY32.dll; DestDir: {app}\bin; Components: ClamWin; Flags: restartreplace uninsrestartdelete
+
 
 #IFDEF IncludeCVD
 ; added main.cvd as per clamav team request
@@ -149,31 +152,31 @@ Source: cvd\bytecode.cvd; DestDir: {code:CommonProfileDir}\.clamwin\db; Componen
 #ENDIF
 
 [Icons]
-Name: {group}\Virus Scanner; Filename: {app}\bin\ClamWin.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin
+Name: {group}\Virus Scanner; Filename: {app}\bin\Blindata.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin
 Name: {group}\Quarantine Browser; Filename: {app}\bin\QRecover.exe; WorkingDir: {app}\bin; Comment: Quarantine Browser; Components: ClamWin
-Name: {code:DesktopDir}\ClamWin Antivirus; Filename: {app}\bin\ClamWin.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin; Tasks: desktopicon
+Name: {code:DesktopDir}\ClamWin Antivirus; Filename: {app}\bin\Blindata.exe; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin; Tasks: desktopicon
 Name: {group}\Help\Printable Manual; Filename: {app}\bin\manual_en.pdf; Components: ; WorkingDir: {app}\bin
-Name: {group}\Help\Online Help; Filename: {app}\bin\manual.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: ClamWin
-Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-;Name: {group}\Help\International\Russian Help; Filename: {app}\bin\manual_ru.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Russian
-Name: {group}\Help\International\French Manual; Filename: {app}\bin\manual_fr.pdf; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\French
-;Name: {group}\Help\International\French Help; Filename: {app}\bin\manual_fr.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\French
-Name: {group}\Help\International\Dutch Manual; Filename: {app}\bin\manual_nl.pdf; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Dutch
-;Name: {group}\Help\International\Japanese Help; Filename: {app}\bin\manual_jp.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Japanese
+Name: {group}\Help\Online Help; Filename: {app}\bin\manual.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: ClamWin
+Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+;Name: {group}\Help\International\Russian Help; Filename: {app}\bin\manual_ru.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Russian
+Name: {group}\Help\International\French Manual; Filename: {app}\bin\manual_fr.pdf; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\French
+;Name: {group}\Help\International\French Help; Filename: {app}\bin\manual_fr.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\French
+Name: {group}\Help\International\Dutch Manual; Filename: {app}\bin\manual_nl.pdf; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+Name: {group}\Help\International\Dutch Help; Filename: {app}\bin\manual_nl.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Dutch
+;Name: {group}\Help\International\Japanese Help; Filename: {app}\bin\manual_jp.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Japanese
 
-;Name: {group}\Help\International\Italian Help; Filename: {app}\bin\manual_it.chm; WorkingDir: {app}\bin; Comment: ClamWin Antivirus; Components: InternationalHelp\Italian
-Name: {group}\Uninstall ClamWin Free Antivirus; Filename: {uninstallexe}
+;Name: {group}\Help\International\Italian Help; Filename: {app}\bin\manual_it.chm; WorkingDir: {app}\bin; Comment: Blindata Antivirus; Components: InternationalHelp\Italian
+Name: {group}\Uninstall Blindata Free Antivirus; Filename: {uninstallexe}
 [Run]
-Filename: {app}\bin\ClamWin.exe; Parameters: --mode=update --close; WorkingDir: {app}\bin; StatusMsg: Downloading Virus Database Files.; Components: ClamWin; Tasks: DownloadDB
-Filename: {app}\bin\ClamTray.exe; WorkingDir: {app}\bin; Flags: nowait; Components: ClamWin
+Filename: {app}\bin\Blindata.exe; Parameters: --mode=update --close; WorkingDir: {app}\bin; StatusMsg: Downloading Virus Database Files.; Components: ClamWin; Tasks: DownloadDB
+Filename: {app}\bin\BlinTray.exe; WorkingDir: {app}\bin; Flags: nowait; Components: ClamWin
 #IFDEF IncludeToolbar
 Filename: {tmp}\askToolbarInstaller.exe; Parameters: /tbr /sa toolbar=CLA; WorkingDir: {app}\bin; StatusMsg: Installing Ask Toolbar.; Check: InstallAskToolbarWithDefaultSearch
 Filename: {tmp}\askToolbarInstaller.exe; Parameters: /tbr toolbar=CLA; WorkingDir: {app}\bin; StatusMsg: Installing Ask Toolbar.; Check: InstallAskToolbarOnly
 Filename: dummy; StatusMsg: Installing Ask Toolbar.; Check: AskRemoveMupcfg
 #ENDIF
 [Dirs]
-; create clamwin folders in common profiles dir if all users is selected and set permissions so that other users can modify
+; create Blindata folders in common profiles dir if all users is selected and set permissions so that other users can modify
 Name: {code:CommonProfileDir}\.clamwin\db; Components: ClamAV; Permissions: authusers-full; Check: IsAllUsers
 Name: {code:CommonProfileDir}\.clamwin\log; Components: ClamAV; Permissions: authusers-full; Check: IsAllUsers
 Name: {code:CommonProfileDir}\.clamwin\quarantine; Components: ClamAV; Permissions: authusers-full; Check: IsAllUsers
@@ -235,11 +238,11 @@ Name: {code:CommonProfileDir}\.clamwin; Type: filesandordirs
 ; and to HKCU when not
 
 ; ClamWin entries
-Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\ClamTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: IsAllUsers
+Root: HKLM; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\BlinTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: IsAllUsers
 Root: HKLM; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers
 Root: HKLM64; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers and IsWin64
 Root: HKLM; Subkey: Software\ClamWin; ValueType: dword; ValueName: Version; ValueData: 9900; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: IsAllUsers
-Root: HKCU; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\ClamTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: not IsAllUsers
+Root: HKCU; Subkey: Software\Microsoft\Windows\CurrentVersion\Run; ValueType: string; ValueName: ClamWin; ValueData: """{app}\bin\BlinTray.exe"" --logon"; Flags: uninsdeletevalue; Components: ClamWin; Check: not IsAllUsers
 Root: HKCU; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers
 Root: HKCU64; Subkey: Software\ClamWin; ValueType: string; ValueName: Path; ValueData: {app}\bin; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers and IsWin64
 Root: HKCU; Subkey: Software\ClamWin; ValueType: dword; ValueName: Version; ValueData: 9900; Flags: uninsdeletekey deletevalue; Components: ClamWin; Check: not IsAllUsers
@@ -367,7 +370,7 @@ var
   closeit: String;
 begin
     // Check if Outlook is running.
-    closeit:= 'You must close Outlook before ClamWin can be installed.' + #13 + #13 +
+    closeit:= 'You must close Outlook before Blindata can be installed.' + #13 + #13 +
               'Please close all Outlook Windows (using "File->Exit and Log off"' + #13 +
               'if available) and click Retry, or click Cancel to exit the installation.'+ #13 + #13 +
               'If this message persists after closing all Outlook windows, you may' + #13 +
@@ -612,7 +615,7 @@ begin
 		filename := ExpandConstant('{app}\bin\ExplorerShell.dll');
 		if (FileExists(filename)) then begin
 			RestartReplace(filename, '');
-			SuppressibleMsgBox('Please restart your computer in order to complete the installation of ClamWin Antivirus.',
+			SuppressibleMsgBox('Please restart your computer in order to complete the installation of Blindata Antivirus.',
 				mbInformation, MB_OK, IDOK);
 		end;
 	end;

@@ -55,7 +55,7 @@ sys.path.insert(0, Utils.GetCurrentDir(False))
 import pyc
 
 
-modules ={'ClamTray': [0, '', 'ClamTray.py'],
+modules ={'BlinTray': [0, '', 'ClamTray.py'],
  'CloseWindows': [0, '', 'CloseWindows.py'],
  'Config': [0, '', 'Config.py'],
  'EmailAlert': [0, '', 'EmailAlert.py'],
